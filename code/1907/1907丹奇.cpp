@@ -4,8 +4,8 @@ int f[1005][1005];
 void package(int w[],int v[],int n,int c);
 int max(int x,int y);
 int main(void){
-    int T;
     freopen("test.txt","r",stdin);
+    int T;
     scanf("%d",&T);
     while(T!=0){
         T--;
