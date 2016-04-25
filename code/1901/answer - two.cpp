@@ -6,7 +6,7 @@ int main(void)
 {
 	freopen("mytest.txt", "r", stdin);
 	char a[1024], b[1024], c[1024][1024];
-	int cx = 0, cy = 0;
+	int cx = 0, cy = 0, res = 0;
 	cin >> a;
 	cin >> b;
 	cx = strlen(a);
@@ -46,12 +46,31 @@ int main(void)
 				{
 					temp = c[i][j - 1];
 				}
-				cout<<temp<<endl;
+				// cout<<temp<<endl;
 			}
+			else
+			{
+				if (c[j][i] > c[j - 1][i])
+				{
+					;
+				}
+				else
+				{
+					c[j][i] = c[j - 1][i];
+				}
+				if (c[j][i] > c[j][i - 1])
+				{
+					;
+				}
+				else
+				{
+					c[j][i] = c[j][i - 1];
+				}
+			}
+			res = c[j][i];
 		}
 		// cout << "x" << endl;
 	}
-
-
+	cout << res << endl;
 	return 0;
 }
