@@ -11,25 +11,42 @@ int main(void)
 	cin >> b;
 	cx = strlen(a);
 	cy = strlen(b);
-	for (int i = 0; i < = cx; ++i)
+	for (int i = 0; i <= cx; ++i)
 	{
-		for (int j = 0; j < = cy; ++j)
+		for (int j = 0; j <= cy; ++j)
+			// <=不能分开写
 		{
 			c[i][j] = '0';
 			// 初始化数据注意数据类型对应，要标准对应
 		}
 	}
-	for (int i = 0; i < cy; ++i)
+	for (int i = 1; i <= cy; ++i)
 	{
-		for (int j = 0; j < cx; ++j)
+		for (int j = 1; j <= cx; ++j)
 		{
-			if (a[i] == a[j])
+			if (a[j] == b[i])
+				// 注意弄反了
 			{
-				cout << "ok";
-			}
-			else
-			{
-				cout << "yes";
+				int temp = 0;
+				c[j][i] = c[j - 1][i - 1] + 1;
+				temp = c[j][i];
+				if (temp > c[i - 1][j])
+				{
+					;
+				}
+				else
+				{
+					temp = c[i - 1][j];
+				}
+				if (temp > c[i][j - 1])
+				{
+					;
+				}
+				else
+				{
+					temp = c[i][j - 1];
+				}
+				cout<<temp<<endl;
 			}
 		}
 		// cout << "x" << endl;
