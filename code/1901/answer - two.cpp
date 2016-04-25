@@ -19,19 +19,18 @@ int main(void)
 			// 初始化数据注意数据类型对应，要标准对应
 		}
 	}
-	for (int i = 0; i < cx; ++i)
-	{
-		for (int j = 0; j < cy; ++j)
-		{
-			cout << c[i][j];
-		}
-		cout<<endl;
-	}
 	for (int i = 0; i < cy; ++i)
 	{
-		for (int i = 0; i < cx; ++i)
+		for (int j = 0; j < cx; ++j)
 		{
-			// cout << "x ";
+			if (a[i]==a[j])
+			{
+				cout<<"ok";
+			}
+			else
+			{
+				cout<<"yes";
+			}
 		}
 		// cout << "x" << endl;
 	}
