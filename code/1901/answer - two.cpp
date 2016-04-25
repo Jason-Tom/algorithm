@@ -11,9 +11,9 @@ int main(void)
 	cin >> b;
 	cx = strlen(a);
 	cy = strlen(b);
-	for (int i = 0; i < cx; ++i)
+	for (int i = 0; i < = cx; ++i)
 	{
-		for (int j = 0; j < cy; ++j)
+		for (int j = 0; j < = cy; ++j)
 		{
 			c[i][j] = '0';
 			// 初始化数据注意数据类型对应，要标准对应
@@ -23,13 +23,13 @@ int main(void)
 	{
 		for (int j = 0; j < cx; ++j)
 		{
-			if (a[i]==a[j])
+			if (a[i] == a[j])
 			{
-				cout<<"ok";
+				cout << "ok";
 			}
 			else
 			{
-				cout<<"yes";
+				cout << "yes";
 			}
 		}
 		// cout << "x" << endl;
