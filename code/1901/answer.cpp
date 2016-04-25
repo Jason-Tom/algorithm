@@ -8,13 +8,13 @@ int main(void)
 	char a[1024], b[1024];
 	int c = 0, d = 0;
 	int t = 0;
-	printf("请输入测试组数\n");
+	// printf("请输入测试组数\n");
 	scanf("%d", &t);
 	while (t--) {
 		int k = 0;
-		printf("请输入数组a：\n");
+		// printf("请输入数组a：\n");
 		scanf("%s", a);
-		printf("请输入数组b：\n");
+		// printf("请输入数组b：\n");
 		scanf("%s", b);
 		c = strlen(a);
 		d = strlen(b);
@@ -33,7 +33,7 @@ int main(void)
 			}
 			++i;
 		}
-		cout << "公共子序列为：" << k << endl;
+		cout << k << endl;
 	}
 	return 0;
 }
