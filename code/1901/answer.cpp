@@ -18,7 +18,7 @@ int main(void)
 		// 数据类型对应好，后面的变量可以使用运算表达式 
 		for (int j = 0; j < d; ++j)
 		{
-			if (/* condition */)
+			if ()
 			{
 				/* code */
 			}
