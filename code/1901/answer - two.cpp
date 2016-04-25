@@ -2,75 +2,76 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
+int c[1024][1024];
 int main(void)
 {
-	freopen("mytest.txt", "r", stdin);
-	char a[1024], b[1024], c[1024][1024];
-	int cx = 0, cy = 0, res = 0;
-	cin >> a;
-	cin >> b;
-	cx = strlen(a);
-	cy = strlen(b);
-	for (int i = 0; i <= cx; ++i)
+	freopen("test.txt", "r", stdin);
+	char a[1024], b[1024];
+
+	int cx = 0, cy = 0, t = 0;
+	cin >> t;
+	while (t--)
 	{
-		for (int j = 0; j <= cy; ++j)
-			// <=不能分开写
+		int i = 0, j = 0;
+		cin >> a;
+		cin >> b;
+		cx = strlen(a);
+		cy = strlen(b);
+		for (i = 0; i <= cx; ++i)
 		{
-			c[i][j] = '0';
-			// 初始化数据注意数据类型对应，要标准对应
+			for (j = 0; j <= cy; ++j)
+				// <=不能分开写
+			{
+				c[i][j] = 0;
+				// 初始化数据注意数据类型对应，要标准对应
+			}
 		}
-	}
-	for (int i = 1; i <= cy; ++i)
-	{
-		for (int j = 1; j <= cx; ++j)
+		for (i = 1; i <= cy; ++i)
 		{
-			if (a[j] == b[i])
-				// 注意弄反了
+			for (j = 1; j <= cx; ++j)
 			{
-				int temp = 0;
-				c[j][i] = c[j - 1][i - 1] + 1;
-				temp = c[j][i];
-				if (temp > c[i - 1][j])
+				if (a[i - 1] == b[j - 1])
+				{
+					c[i][j] = c[i - 1][j - 1] + 1;
+					if (c[i][j] > c[i - 1][j])
+					{
+						;
+					}
+					else
+					{
+						c[i][j] = c[i - 1][j];
+					}
+
+					if (c[i][j] > c[i][j - 1])
+					{
+						;
+					}
+					else
+					{
+						c[i][j] = c[i][j - 1];
+					}
+				}
+				else if (c[i][j] > c[i][j - 1])
 				{
 					;
 				}
 				else
 				{
-					temp = c[i - 1][j];
+					c[i][j] = c[i][j - 1];
 				}
-				if (temp > c[i][j - 1])
+				if (c[i][j] > c[i - 1][j])
 				{
 					;
 				}
 				else
 				{
-					temp = c[i][j - 1];
-				}
-				// cout<<temp<<endl;
-			}
-			else
-			{
-				if (c[j][i] > c[j - 1][i])
-				{
-					;
-				}
-				else
-				{
-					c[j][i] = c[j - 1][i];
-				}
-				if (c[j][i] > c[j][i - 1])
-				{
-					;
-				}
-				else
-				{
-					c[j][i] = c[j][i - 1];
+					c[i][j] = c[i - 1][j];
 				}
 			}
-			res = c[j][i];
 		}
-		// cout << "x" << endl;
+		cout << c[i][j] << endl;
 	}
-	cout << res << endl;
 	return 0;
 }
+
+
