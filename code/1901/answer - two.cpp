@@ -5,7 +5,7 @@ using namespace std;
 int main(void)
 {
 	freopen("mytest.txt", "r", stdin);
-	char a[1024],b[1024],x[1024],y[1024];
+	char a[1024],b[1024],c[1024][1024];
 	int cx=0,cy=0;
 	cin>>a;
 	cin>>b;
@@ -17,8 +17,8 @@ int main(void)
 	// cout<<b<<endl;
 	// cout<<x<<endl;
 	// cout<<y<<endl;
-	cout<<cx<<endl;
-	cout<<cy<<endl;
+	// cout<<cx<<endl;
+	// cout<<cy<<endl;
 	
 
 	return 0;
