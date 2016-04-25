@@ -2,12 +2,13 @@
 #include<iostream>
 #include<string.h>
 using namespace std;
-int c[1024][1024];
+
 int main(void)
 {
 	freopen("test.txt", "r", stdin);
-	char a[1024], b[1024];
-
+	char a[100], b[100];
+	int c[100][100];
+	// 二维数组不能定义太大，会越界
 	int cx = 0, cy = 0, t = 0;
 	cin >> t;
 	while (t--)
