@@ -1,5 +1,7 @@
 #include<stdio.h>
+#include<iostream>
 #include<string.h>
+using namespace std;
 int x=0,T=0;
 int main(void){
     freopen("test.txt","r",stdin);
