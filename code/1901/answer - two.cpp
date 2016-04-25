@@ -11,13 +11,29 @@ int main(void)
 	cin >> b;
 	cx = strlen(a);
 	cy = strlen(b);
+	for (int i = 0; i < cx; ++i)
+	{
+		for (int j = 0; j < cy; ++j)
+		{
+			c[i][j] = '0';
+			// 初始化数据注意数据类型对应，要标准对应
+		}
+	}
+	for (int i = 0; i < cx; ++i)
+	{
+		for (int j = 0; j < cy; ++j)
+		{
+			cout << c[i][j];
+		}
+		cout<<endl;
+	}
 	for (int i = 0; i < cy; ++i)
 	{
 		for (int i = 0; i < cx; ++i)
 		{
-			cout << "x ";
+			// cout << "x ";
 		}
-		cout << "x" << endl;
+		// cout << "x" << endl;
 	}
 
 
