@@ -14,12 +14,16 @@ int main(void)
 	d=strlen(b);
 	for (int i = 0; i < c; ++i)
 	{
-		printf("第%d个字符是：%c\n",i+1,a[i]);
+		// printf("第%d个字符是：%c\n",i+1,a[i]);
 		// 数据类型对应好，后面的变量可以使用运算表达式 
 		for (int j = 0; j < d; ++j)
 		{
+			if (/* condition */)
+			{
+				/* code */
+			}
 			// 循环语句，三个条件准确，注意临界，循环内变量对应
-			printf("第%d个字符是：%c\n",j+1,b[j]);
+			// printf("第%d个字符是：%c\n",j+1,b[j]);
 		}
 	}
 	// printf("数组a：%s\n",a);
