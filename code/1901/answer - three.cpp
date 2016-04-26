@@ -1,42 +1,27 @@
 #include<stdio.h>
-#include<iostream>
 #include<string.h>
-using namespace std;
 
 int main(void)
 {
-	//freopen("test.txt", "r", stdin);
+	freopen("test.txt", "r", stdin);
 	char a[100], b[100];
 	int c[100][100];
-	// 二维数组不能定义太大，会越界
 	int cx = 0, cy = 0, t = 0;
-	cin >> t;
+	scanf("%d", &t);
 	while (t--)
 	{
 		int i = 0, j = 0;
-		cin >> a;
-		cin >> b;
+		scanf("%s", a);
+		scanf("%s", b);
 		cx = strlen(a);
 		cy = strlen(b);
-		// for (i = 0; i <= cx; ++i)
-		// {
-		// 	for (j = 0; j <= cy; ++j)
-		// 		// <=不能分开写
-		// 	{
-		// 		c[i][j] = 0;
-		// 		// 初始化数据注意数据类型对应，要标准对应
-		// 	}
-		// }
-
 		for (i = 0; i <= cx; ++i)
 		{
-				c[i][0] = 0;
+			c[i][0] = 0;
 		}
 		for (j = 0; j <= cy; ++j)
-			// <=不能分开写
 		{
 			c[0][j] = 0;
-			// 初始化数据注意数据类型对应，要标准对应
 		}
 
 		for (i = 1; i <= cx; ++i)
@@ -46,23 +31,10 @@ int main(void)
 				if (a[i - 1] == b[j - 1])
 				{
 					c[i][j] = c[i - 1][j - 1] + 1;
-					if (c[i][j] > c[i - 1][j])
-					{
-						;
-					}
-					else
-					{
+					if (c[i][j] <= c[i - 1][j])
 						c[i][j] = c[i - 1][j];
-					}
-
-					if (c[i][j] > c[i][j - 1])
-					{
-						;
-					}
-					else
-					{
+					if (c[i][j] <= c[i][j - 1])
 						c[i][j] = c[i][j - 1];
-					}
 				}
 				else
 				{
@@ -77,7 +49,7 @@ int main(void)
 				}
 			}
 		}
-		cout << c[cx][cy] << endl;
+		printf("%d\n", c[cx][cy]);
 	}
 	return 0;
 }
