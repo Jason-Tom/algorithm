@@ -1,11 +1,10 @@
 #include<stdio.h>
 #include<string.h>
-
-int main(void)
+int c[1024][1024];
+int main()
 {
-	freopen("test.txt", "r", stdin);
+	// freopen("test.txt", "r", stdin);
 	char a[100], b[100];
-	int c[100][100];
 	int cx = 0, cy = 0, t = 0;
 	scanf("%d", &t);
 	while (t--)
