@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #define max(A,B) (A>=B?A:B)
-char a[1100], b[1100];
-int dp[1100][1100], w;
+#define MAXN 1100
+char a[MAXN], b[MAXN];
+int dp[MAXN][MAXN], w;
 int main()
 {
 	freopen("test.txt", "r", stdin);
