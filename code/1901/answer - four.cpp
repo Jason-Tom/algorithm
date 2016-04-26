@@ -1,12 +1,15 @@
 #include<stdio.h>
 #include<string.h>
 #define maxn 1010
+#define max(a,b) (a>=b?a:b)
+#define swith if(0)
 // 方便统一修改
 // 宏只是一个替换工具，可以替换函数、变量、片段，通过这里定义效率高，（定义短的）
 char a[maxn], b[maxn];
 int c[maxn][maxn];
 int main()
 {
+	swith
 	freopen("test.txt", "r", stdin);
 	int t = 0;
 	scanf("%d", &t);
