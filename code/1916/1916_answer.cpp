@@ -12,7 +12,7 @@ int main()
 	scanf("%d", &t);
 	while (t--)
 	{
-		int n = 0, star[1024], end[1024], num = 0, temp = 0, temp_max = 0;
+		int n = 0, star[1024], end[1024], num = 0, temp = 0, temp_max_one = 0, temp_max_two = 0;
 		scanf("%d", &n);
 		memset(star, 0, sizeof(star));
 		memset(end, 0, sizeof(end));
@@ -29,17 +29,20 @@ int main()
 			{
 				if (end[i] > end[j])
 				{
-					temp_max = end[i];
+					temp_max_one = end[i];
 					end[j] = end[i];
-					end[j] = temp_max;
+					end[j] = temp_max_one;
+					temp_max_two = star[i];
+					star[j] = star[i];
+					star[j] = temp_max_two;
 				}
 
 			}
 		}
-		// for (int i = 0; i < n; ++i)
-		// {
-		// 	printf("%d\n", end[i]);
-		// }
+		for (int i = 0; i < n; ++i)
+		{
+			printf("%d\n", star[i]);
+		}
 		// for (int i = 1; i <= n; ++i)
 		// {
 		// 	// printf("%d\n",i);
