@@ -8,7 +8,7 @@ int main()
 	// printf("asfdasdfa\n");
 	open
 	freopen("test.txt", "r", stdin);
-	int t = 0;
+	int t = 0,l=0;
 	scanf("%d", &t);
 	while (t--)
 	{
@@ -21,8 +21,8 @@ int main()
 			scanf("%d%d", &star[i], &end[i]);
 			// printf("%d %d\n",star[i],end[i]);
 		}
-		sort(star, star + n);
-		sort(end, end + n);
+		// sort(star, star + n);
+		// sort(end, end + n);
 		for (int i = 1; i <= n; ++i)
 		{
 			// printf("%d\n",i);
@@ -38,6 +38,7 @@ int main()
 		// 	printf("%d %d\n", star[i], end[i]);
 		// }
 		// printf("%d\n",t);
-		// printf("%d\n", num );
+		l++;
+		printf("Case %d: %d\n", l,num );
 	}
 }
