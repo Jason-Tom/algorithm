@@ -12,7 +12,7 @@ int dp[MAXN], V, n;
 int main()
 {
 	int t = 0;
-	freopen("test.txt", "r", stdin);
+	// freopen("test.txt", "r", stdin);
 	scanf("%d", &t);
 
 	while (t--) {

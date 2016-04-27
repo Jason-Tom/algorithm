@@ -5,7 +5,7 @@
 int main() {
 	swith
 	freopen("test.txt", "r", stdin);
-	int max_temp[100], value[1024], weight[1024], c = 0, n = 0, t = 0;
+	int max_temp[1024], value[1024], weight[1024], c = 0, n = 0, t = 0;
 	memset(max_temp, 0, sizeof(max_temp));
 	memset(weight, 0, sizeof(weight));
 	memset(value, 0, sizeof(value));
