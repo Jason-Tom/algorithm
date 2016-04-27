@@ -4,6 +4,8 @@
 int main()
 {
 	// printf("asfdasdfa\n");
+	open
+	freopen("test.txt","r",stdin);
 	int t = 0;
 	scanf("%d",&t);
 	while(t--)
@@ -14,7 +16,8 @@ int main()
 		memset(end,0,sizeof(end));
 		for (int i = 1; i <= n; ++i)
 		{
-			printf("%d %d\n",star[i],end[i] );
+			scanf("%d%d",&star[i],&end[i]);
+			printf("%d %d\n",star[i],end[i]);
 		}
 		// printf("%d\n",t);
 	}
