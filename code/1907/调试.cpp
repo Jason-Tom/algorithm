@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #define mymax(a,b) (a>=b?a:b)
-#define swith if(0)
+#define swith if(1)
 int main() {
 	swith
 	freopen("test.txt", "r", stdin);
