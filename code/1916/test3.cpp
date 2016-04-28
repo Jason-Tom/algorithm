@@ -18,10 +18,7 @@ int main()
 		for (int i = 0; i < n; ++i)
 		{
 			scanf("%d%d", &star[i], &end[i]);
-			// printf("%d %d\n",star[i],end[i]);
 		}
-		// sort(star, star + n);
-		// sort(end, end + n);
 		for (int i = 0; i < n; ++i)
 		{
 			for (int j = i + 1; j < n; ++j)
@@ -35,28 +32,16 @@ int main()
 					star[i] = star[j];
 					star[j] = temp_max_two;
 				}
-
 			}
 		}
-		// for (int i = 0; i < n; ++i)
-		// {
-		// 	printf("%d\n", end[i]);
-		// }
-		for (int i = 1; i <= n; ++i)
+		for (int i = 0; i < n; ++i)
 		{
-			// printf("%d\n",i);
 			if (temp <= star[i])
 			{
 				temp = end[i];
 				num++;
-				// printf("%d\n",i);
 			}
 		}
-		// for (int i = 1; i <= n; ++i)
-		// {
-		// 	printf("%d %d\n", star[i], end[i]);
-		// }
-		// printf("%d\n",t);
 		l++;
 		printf("Case %d: %d\n", l, num );
 	}
