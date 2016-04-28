@@ -3,13 +3,13 @@
 #include <algorithm>
 using namespace std;
 #define open if(0)
-bool complare(int a, int b)
+bool compare(int a, int b)
 {
 	return a > b;
 }
 int main() {
 	freopen("test.txt", "r", stdin);
-	int t = 0;
+	int t = 0, l = 0;
 	scanf("%d", &t);
 	while (t--) {
 		int n = 0, m = 0, time[1024];
@@ -21,15 +21,15 @@ int main() {
 			scanf("%d", &time[i]);
 			// printf("time:%d \n",time[i]);
 		}
-		sort(time, time + n, complare);
+		sort(time, time + n, compare);
 		// for (int i = 0; i < n; ++i)
 		// {
 		// 	printf("time:%d \n",time[i]);
 		// }
-		int my_max_time = 0;
+		int my_min_time = 0;
 		if (n <= m)
 		{
-			my_max_time = time[0];
+			my_min_time = time[0];
 		}
 		else
 		{
@@ -63,11 +63,11 @@ int main() {
 				// printf("\n");
 				// printf("%d \n",machine[index]);
 			}
-			sort(machine, machine + m, complare);
-			my_max_time = machine[0];
+			sort(machine, machine + m, compare);
+			my_min_time = machine[0];
 			// printf("%d\n", machine[0] );
 		}
-		printf("%d \n", my_max_time);
+		printf("Case %d: %d\n", ++l, my_min_time);
 		// printf("%d %d\n", n, m);
 	}
 }
