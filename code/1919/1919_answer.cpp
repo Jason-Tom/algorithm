@@ -33,12 +33,23 @@ int main() {
 		}
 		else
 		{
+			int i=0,j=0;
 			int machine[m];
-			memset(machine,0,sizeof(machine));
-			for (int i = 0; i < m; ++i)
+			memset(machine, 0, sizeof(machine));
+			for (i = 0; i < m; ++i)
 			{
-				printf("%d\n",machine[i] );
+				// printf("%d\n",machine[i] );
+				machine[i] = time[i];
 			}
+			for (j = 0; j < m - 1; ++j)
+			{
+				if (machine[j] > machine[j + 1])
+				{
+					machine[j] = machine[j + 1];
+				}
+
+			}
+			// printf("%d\n", machine[j] );
 		}
 		// printf("%d\n", my_max_time);
 		// printf("%d %d\n", n, m);
