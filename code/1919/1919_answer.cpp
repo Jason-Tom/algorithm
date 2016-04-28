@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <string.h>
+#include <algorithm>
+using namespace std;
 #define open if(1)
+bool complare(int a,int b)
+{
+ return a>b;
+}
 int main() {
 	freopen("test.txt", "r", stdin);
 	int t = 0;
@@ -13,8 +19,13 @@ int main() {
 		for (int i = 0; i < n; ++i)
 		{
 			scanf("%d",&time[i]);
-			printf("time:%d \n",time[i]);
+			// printf("time:%d \n",time[i]);
 		}
+		sort(time,time+n,complare);
+		// for (int i = 0; i < n; ++i)
+		// {
+		// 	printf("time:%d \n",time[i]);
+		// }
 		// printf("%d %d\n", n, m);
 	}
 }
