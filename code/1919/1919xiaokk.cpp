@@ -2,13 +2,12 @@
 #include <string.h>
 #include <algorithm>
 using namespace std;
-#define open if(1)
+#define open if(0)
 bool compare(int a, int b)
 {
 	return a > b;
 }
 int main() {
-	open
 	freopen("test.txt", "r", stdin);
 	int t = 0, l = 0;
 	scanf("%d", &t);
@@ -38,12 +37,12 @@ int main() {
 			for (i = m; i < n; ++i)
 			{
 				int temp = machine[0], index = 0;
-				for (j = 0; j < m - 1; ++j)
+				for (j = 0; j < m; ++j)
 				{
-					if (temp > machine[j + 1])
+					if (temp > machine[j])
 					{
-						temp = machine[j + 1];
-						index = j + 1;
+						temp = machine[j];
+						index = j;
 					}
 				}
 				machine[index] += time[i];
