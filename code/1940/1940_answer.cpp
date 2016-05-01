@@ -26,11 +26,19 @@ int main()
 				// printf("之前的a：%d\n", a);
 				node[a - 1][i] = b;
 				// printf("之后的a：%d\n", a);
-				printf("%d %d\n", a, node[a - 1][i] );
+				// printf("%d %d\n", a, node[a - 1][i] );
 				// printf("\n");
 				break;
 			}
 			// printf("%d\n",node[i][i]);
+		}
+	}
+	for (int i = 0; i < 8; ++i)
+	{
+		for (int j = 0; node[i][j]!=0; ++j)
+		{
+			printf("%d\n", node[i][j]);
+			// printf("asdf\n");
 		}
 	}
 	return 0;
