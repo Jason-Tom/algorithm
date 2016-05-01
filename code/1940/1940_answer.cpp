@@ -1,14 +1,20 @@
 ﻿#include <stdio.h>
 #include <iostream>
 #include <string.h>
-#define mymeset(a) memset(a,0,sizeof(a))
+#define mymemset(a) memset(a,0,sizeof(a))
 #define myopen if(1)
 using namespace std;
-// bool themax(int a, int b) {
-//     return a > b;
-// }
+
 int node[1024][1024];
 // 大小范围
+void recursion(int a)
+{
+	int i = 0, j = 0;
+	for (int i = 0; node[i][j] != 0; ++i)
+	{
+		recursion(node[i][j]);
+	}
+}
 int main()
 {
 	myopen
@@ -18,7 +24,8 @@ int main()
 	// 给出这个有向图的边数 e （ 0 ≤ n ≤ 100000 ）
 	// 开始，共e行，每行两个正整数 a b，表示从顶点a发出一条弧到顶点b。
 	scanf("%d%d", &n, &e);
-	mymeset(node);
+	mymemset(node);
+	// 输入数据
 	while (e--)
 	{
 		scanf("%d%d", &a, &b);
@@ -36,24 +43,25 @@ int main()
 			// printf("%d\n",node[i][i]);
 		}
 	}
+	// 排序每个节点数据
 	for (int i = 0; i < n; ++i)
 	{
 		int temp = 0, j = 0, k = 0;
-		for (j = 0; node[j][k] != 0; ++j)
+		for (j = 0; node[i][j] != 0; ++j)
 		{
-			for (k = j + 1; node[j][k] != 0; ++k)
+			for (k = j + 1; node[i][k] != 0; ++k)
 			{
-				if (node[j][k] > node[j][k + 1])
+				if (node[i][j] > node[i][k])
 				{
 					temp = node[i][j];
-					node[i][j] = node[i][j + 1];
-					node[i][j + 1] = temp;
+					node[i][j] = node[i][k];
+					node[i][k] = temp;
 				}
 
 			}
 		}
 	}
-
+	// 检测输出数据
 	for (int i = 0; i < 8; ++i)
 	{
 		for (int j = 0; node[i][j] != 0; ++j)
