@@ -3,8 +3,8 @@
 #include <string.h>
 #define mymemset(a) memset(a,0,sizeof(a))
 #define myopen if(1)
-#define mynum 1024
-int mydata[mynum][2];
+#define mynum 100024
+int positive_data[mynum], negative_num[mynum];
 int main()
 {
 	myopen
@@ -13,20 +13,35 @@ int main()
 	scanf("%d", &t);
 	while (t--)
 	{
-		mymemset(mydata);
+		mymemset(positive_data);
+		mymemset(negative_num);
 		int n = 0, datanum = 0, i = 0;
 		scanf("%d", &n);
-		// if (n == 0)
-		// {
-		// 	printf("no\n");
-		// 	continue;
-		// }
 		for (i = 0; i < n; ++i)
 		{
 			scanf("%d", &datanum);
-			++mydata[i][0];
-			if (mydata[datanum][0] > n / 2)
-				break;
+			if (datanum > 0)
+			{
+				++positive_data[datanum];
+				if (positive_data[datanum] > n / 2) {
+					break;
+				}
+			}
+			else
+			{
+				++negative_num[-datanum];
+				if (negative_num[-datanum] > n / 2) {
+					break;
+				}
+			}
+
+		}
+		while (i + 1 < n)
+		{
+			i++;
+			int excess = 0;
+			scanf("%d", &excess);
+			// printf("%d\n", excess );
 		}
 		if (i != n)
 			printf("%d\n", datanum);
