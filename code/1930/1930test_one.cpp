@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string.h>
 #define mymemset(a) memset(a,0,sizeof(a))
-#define myopen if(1)
+#define myopen if(0)
 #define mynum 100024
 int positive_data[mynum], negative_num[mynum];
 int main()
