@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string.h>
 #define mymemset(a) memset(a,0,sizeof(a))
-#define myopen if(0)
-#define mynum 100024
-int mydata[mynum];
+#define myopen if(1)
+#define mynum 1024
+int mydata[mynum][2];
 int main()
 {
 	myopen
@@ -14,32 +14,23 @@ int main()
 	while (t--)
 	{
 		mymemset(mydata);
-		int n = 0, datanum = 0,i=0;
+		int n = 0, datanum = 0, i = 0;
 		scanf("%d", &n);
+		// if (n == 0)
+		// {
+		// 	printf("no\n");
+		// 	continue;
+		// }
 		for (i = 0; i < n; ++i)
 		{
 			scanf("%d", &datanum);
-			++mydata[datanum];
-			if (mydata[datanum] > n / 2)
-			{
+			++mydata[i][0];
+			if (mydata[datanum][0] > n / 2)
 				break;
-			}
-			// printf("%d ", mydata[datanum] );
-			// 数据和索引对应
 		}
-		if (i!=n)
-		{
+		if (i != n)
 			printf("%d\n", datanum);
-		}
 		else
-		{
 			printf("no\n");
-		}
-		// printf("\n");
-		// printf("%d\n", t );
 	}
-	// for (int i = 0; i < 100024; ++i)
-	// {
-	// 	printf("%d\n", mydata[i] );
-	// }
 }
