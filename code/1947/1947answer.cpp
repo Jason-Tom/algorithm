@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-#define myopen if(0)
+#define myopen if(1)
 #define mynum 10024
 #define mymemset(a) memset(a,0,sizeof(a))
 int mydata[mynum];

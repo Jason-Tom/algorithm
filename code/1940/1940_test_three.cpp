@@ -3,7 +3,7 @@
 #include <string.h>
 #include <algorithm>
 #define mymemset(a) memset(a,0,sizeof(a))
-#define myopen if(1)
+#define myopen if(0)
 #define mynum 1024
 using namespace std;
 int repeat[mynum], pre[mynum], post[mynum], data = 0;
@@ -12,15 +12,14 @@ void recursion(int d)
 {
 	int j = 0;
 	pre[d - 1] = ++data;
+	// 每次进来都要标记说明该节点已经走过
+	repeat[d - 1] = 1;
 	for (j = 0; node[d - 1][j] != 0; ++j)
 	{
 		if (repeat[node[d - 1][j] - 1] == 0)
 		{
-			repeat[d - 1] = 1;
 			recursion(node[d - 1][j]);
 		}
-
-
 	}
 	post[d - 1] = ++data;
 }
@@ -73,15 +72,15 @@ int main()
 	{
 		printf("%d ", post[i]);
 	}
-	printf("\n");
-	for (int i = 0; i < 8; ++i)
-	{
-		for (int j = 0; node[i][j] != 0; ++j)
-		{
-			printf("节点%d：索引%d %d\n", i + 1, j, node[i][j]);
-		}
-		printf("\n");
-	}
+	// printf("\n");
+	// for (int i = 0; i < 8; ++i)
+	// {
+	// 	for (int j = 0; node[i][j] != 0; ++j)
+	// 	{
+	// 		printf("节点%d：索引%d %d\n", i + 1, j, node[i][j]);
+	// 	}
+	// 	printf("\n");
+	// }
 	return 0;
 }
 

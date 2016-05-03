@@ -20,12 +20,27 @@ int main()
 		{
 			scanf("%d", &mydata[i]);
 		}
-		sort(mydata,mydata+n);
-		for (int i = 0; i < n; ++i)
+		sort(mydata, mydata + n);
+		// for (int i = 0; i < n; ++i)
+		// {
+		// 	printf("%d\n", mydata[i] );
+		// }
+		// 向左边循环
+		for (int i = (n + 1) / 2 - 1; i > -1; --i)
 		{
-			printf("%d\n", mydata[i] );
+			if (mydata[(int)((n + 1) / 2) - 1] == mydata[i])
+			{
+				mylen++;
+				printf("%d\n", mylen );
+			}
+			else
+			{
+				break;
+			}
+			printf("%d\n", i );
 		}
-		// printf("%d\n", mymax );
+		printf("\n");
+		// 向右边循环
 	}
 	return 0;
 }

@@ -1,13 +1,18 @@
 ﻿#include <stdio.h>
 #include <iostream>
 #include <string.h>
+#include <algorithm>
 #define mymemset(a) memset(a,0,sizeof(a))
 #define myopen if(1)
 #define mynum 1024
 using namespace std;
 int repeat[mynum], pre[mynum], post[mynum], data = 0;
+int len[mynum];
 int node[mynum][mynum];
 // 大小范围
+ bool cmp(int a,int b){
+ 	return a<b;
+ }
 void recursion(int d)
 {
 	int j = 0;
@@ -41,6 +46,7 @@ int main()
 	mymemset(repeat);
 	mymemset(pre);
 	mymemset(post);
+	mymemset(len);
 	// for (int i = 0; i < 1024; ++i)
 	// {
 	// 	printf("%d\n",repeat[i] );
@@ -49,6 +55,7 @@ int main()
 	while (e--)
 	{
 		scanf("%d%d", &a, &b);
+		len[a-1]++;
 		for (int i = 0; ; ++i)
 		{
 			if (node[a - 1][i] == 0)
@@ -63,6 +70,8 @@ int main()
 			// printf("%d\n",node[i][i]);
 		}
 	}
+
+
 	// 排序每个节点数据
 	for (int i = 0; i < n; ++i)
 	{
@@ -81,6 +90,22 @@ int main()
 			}
 		}
 	}
+
+	
+	// for(int i=0;i<n;i++)
+	// 	sort(node[i],node[i]+len[i],cmp);
+
+	for(int i=0;i<n;i++){
+		printf("%d : ",i);
+		for(int j=0;;j++){
+			if(!node[i][j])break;
+			printf("%d ",node[i][j]);
+		}
+		printf("\n");
+	}
+	
+
+
 	recursion(1);
 	for (int i = 0; i < n; ++i)
 	{
@@ -92,6 +117,7 @@ int main()
 		printf("%d ", post[i]);
 	}
 	printf("\n");
+	/*
 	// 检测输出数据
 	for (int i = 0; i < 8; ++i)
 	{
@@ -101,6 +127,7 @@ int main()
 		}
 		printf("\n");
 	}
+	*/
 	return 0;
 }
 
